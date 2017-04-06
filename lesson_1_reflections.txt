@@ -34,3 +34,8 @@ git init
 can also to check details of the directory:
 git status
 
+once a directory has been initialised, we can now add files to the staging area using:
+
+git add filename
+you can add multiple files to the staging area and then a single commit will move all files in staging area from here to a new commit
+
