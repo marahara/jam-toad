@@ -1,0 +1,36 @@
+for cmd use: cd oldfile newfile
+for git bash navigate to directory and then: diff -u oldfile newfile
+this helps us identify any changes or typos easily in long pieces of code
+
+Why do we use git?
+For version control.  I can bring up git bash and pull in a git repository by using:
+
+git clone http://url.com/url.git
+This will then create a copy of the repository in my file.  Now to look at previous version history I can go into the directory and run:
+
+git log
+which brings up ids of previous commits.  I can now take two ids and run a comparison, checking which code has changed by comparing:
+
+git diff id1 id2
+remember I can use q to quit at any point.  and the order of the ids im comparing is chronological. git diff firstid latestid
+if the colours arent showing up which should be red for somehting deleted or green for something added then run:
+
+git config --global color.ui auto
+
+
+
+How can you use the commands git log and git diff to view the history of files?
+I can use these by typing them in as listed above.  git log displays a log of the ids of a directory and git diff compares them.
+
+Version control can leave you confdident in makig large changes.  We can temporarily roll back to a previous repo by first findng the id with git log and then entering:
+
+git checkout idnumber
+we can now run any file and it will be rolled back, we must ensure we remember to checkout to original most recent id.  We can check for a bug and then we can then compare previous ids to look for the line of dcode that introduced the bug.
+
+you can check for hiudden files so you can use ls -a
+and when in a directory you canturn it into a git directory by typing:
+git init
+
+can also to check details of the directory:
+git status
+
