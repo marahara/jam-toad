@@ -39,3 +39,32 @@ once a directory has been initialised, we can now add files to the staging area 
 git add filename
 you can add multiple files to the staging area and then a single commit will move all files in staging area from here to a new commit
 
+to check any updates recently made that havent been added to the staging area just run the command without any arguments:
+
+git diff
+this will then provide all recent changes to files that haven't yet been commited or added to staging area.  If iwanted to compare those that are in the staged area to the repo then it is:
+
+git diff --staged
+if you want to erase any changes made in the working directory or the tsaging area, although this is rare that you should want to do this and you should be careful, use:
+
+git reset --hard
+if the head is detached from using a checkout id from earlier then you can use git checkout master to return to the most recent.
+You can veer off the master and create separate branches by using:
+
+git branch
+and this will list all existing branches.  You would then type:
+
+git got branch nameofbranch
+where nameofbranch is the argument to create the name of the new branch.  by checking the git branch now you can see all listed branches and you can then access the new branch using git checkout.
+
+how are branches helpful?
+a branch could be used to separate different experimental features, or to create a different player difficulty setting, or a different language.  These different branches can later be merged but it is useful to keep them at different states.  also when working in a team each person can work on a different branch so working on each dffernet feautre or bug.
+If multiple people are working on different branches, you can look at change history by:
+
+git log --graph --oneline branch1 branch2
+this will visualise the changes made in each branch, make the earlier branch first.  If I am on a separate branch and checkout an unrelated aerea like the master for example, the i will lose progress. those changes need to be committed and can be done by:
+
+git checkout -b newbranchname
+this will create new branch and view it.
+
+
