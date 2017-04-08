@@ -65,6 +65,25 @@ git log --graph --oneline branch1 branch2
 this will visualise the changes made in each branch, make the earlier branch first.  If I am on a separate branch and checkout an unrelated aerea like the master for example, the i will lose progress. those changes need to be committed and can be done by:
 
 git checkout -b newbranchname
-this will create new branch and view it.
+this will create new branch and view it. you can check stastus to see branches. Now when you want to merge your branches, you will need to navigate and checkout your master then enter:
+
+git merge master otherbranch
+now this merges otherbranch into the master, and now all changes of both will show in the log.  If you now want to see changes made you can see a diff aggainst its parent by using:
+
+git show idofcommit
+this will show a dif against its parent without needing to know what the parent is. Now, when you have merged the branches you wont need the previous branch anymore so you can delete it:
+
+git branch -d branchname
+all of your commits will be still here in the branch it is just the label being deleted. althugh if you delete branch without mderging then you will lose all commits. Remember If I want to find the previous ids to compaare, from another branch then i can bring up a list of all ids of branches in the given directory by using:
+
+git log --graph --oneline
+
+now to use github:  I can create a repository on github and then to upload my local repo to the github one I first make a connection to it in git bash and then send my master or whatever i am in:
+
+git remote add origin http://urlofrepoingithub.git
+in this case it is https://github.com/marahara/jam-toad.git ...remember the remote part! once the remote connection has been eestablished you can then push your local directory to it with:
+
+git push -u origin master
+with master being my current latest branch of course.  You will be prompted for login details.
 
 
